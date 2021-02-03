@@ -27,8 +27,8 @@ for lineNumber from=1 to=$linesCount step=1 do={
 		/interface enable "pppoe-out$lineNumber"; 
 		} on-error={ :put "not-found"}
 	}
+	:delay 10s;
 	execute {
-		:delay 10s;
 		/system script run check-lines;
 		/quit
 	}
