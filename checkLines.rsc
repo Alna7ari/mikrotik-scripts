@@ -1,7 +1,7 @@
 #auto check and reconnect bridge lines by Alna7ari
 #the pppoe-out interfaces must name with defualt named like pppoe-out1
 #enjoy...
-
+{
 :global linesCount 4; #change this var to your pppoe-out count
 for lineNumber from=1 to=$linesCount step=1 do={
 
@@ -21,4 +21,9 @@ for lineNumber from=1 to=$linesCount step=1 do={
 		}
 		/interface enable "pppoe-out$lineNumber"; 
 	} on-error={ :put "not-found"}
+}
+execute {
+/system script run check-lines;
+/quit
+}
 }
