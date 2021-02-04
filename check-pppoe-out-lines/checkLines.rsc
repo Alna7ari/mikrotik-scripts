@@ -29,7 +29,7 @@ foreach pppClient in=[/interface pppoe-client find where disabled=no] do={
 	}
 	:delay 10s;
 	execute {
-		/system script run check-lines;
+		/system script run check-lines-by-alna7ari;
 		/quit
 	}
 }
